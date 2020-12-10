@@ -10,6 +10,7 @@ class PetsController < ApplicationController
   # GET /pets/1
   # GET /pets/1.json
   def show
+    @pet_histories = PetHistory.all
   end
 
   # GET /pets/new

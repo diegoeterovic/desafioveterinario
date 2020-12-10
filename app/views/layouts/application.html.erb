@@ -10,6 +10,14 @@
   </head>
 
   <body>
+  <nav>
+    <ul>
+      <%= link_to "pets", pets_path %>
+      <%= link_to "History", pet_histories_path %>
+    </ul>
+  
+  </nav>
+
     <%= yield %>
   </body>
 </html>

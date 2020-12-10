@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Pet</th>
       <th>Weight</th>
       <th>Heigth</th>
       <th>Description</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @pet_histories.each do |pet_history| %>
       <tr>
+        <td><%= pet_history.pet %></td>
         <td><%= pet_history.weight %></td>
         <td><%= pet_history.heigth %></td>
         <td><%= pet_history.description %></td>

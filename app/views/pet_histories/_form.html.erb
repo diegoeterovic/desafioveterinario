@@ -11,6 +11,12 @@
     </div>
   <% end %>
 
+
+  <div class="field">
+    <%= form.label :pet %>
+    <%= form.select :pet_id, @pets.map{|pet| [pet.name, pet.id] }, prompt: "Elige una mascota" %>
+  </div>
+
   <div class="field">
     <%= form.label :weight %>
     <%= form.text_field :weight %>

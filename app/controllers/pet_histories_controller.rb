@@ -5,6 +5,7 @@ class PetHistoriesController < ApplicationController
   # GET /pet_histories.json
   def index
     @pet_histories = PetHistory.all
+
   end
 
   # GET /pet_histories/1
@@ -15,16 +16,21 @@ class PetHistoriesController < ApplicationController
   # GET /pet_histories/new
   def new
     @pet_history = PetHistory.new
+    @pets = Pet.all
+
   end
 
   # GET /pet_histories/1/edit
   def edit
+
   end
 
   # POST /pet_histories
   # POST /pet_histories.json
   def create
     @pet_history = PetHistory.new(pet_history_params)
+ 
+
 
     respond_to do |format|
       if @pet_history.save
@@ -40,6 +46,7 @@ class PetHistoriesController < ApplicationController
   # PATCH/PUT /pet_histories/1
   # PATCH/PUT /pet_histories/1.json
   def update
+    @pets = Pet.all
     respond_to do |format|
       if @pet_history.update(pet_history_params)
         format.html { redirect_to @pet_history, notice: 'Pet history was successfully updated.' }
@@ -69,6 +76,6 @@ class PetHistoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_history_params
-      params.require(:pet_history).permit(:weight, :heigth, :description)
+      params.require(:pet_history).permit(:weight, :heigth, :description, :pet_id)
     end
 end
