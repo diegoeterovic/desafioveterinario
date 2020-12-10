@@ -26,6 +26,11 @@
     <%= form.date_select :birthdate %>
   </div>
 
+  <div class="field">
+    <%= form.label :client %>
+    <%= form.select :client_id, @clients.map{|client| [client.name, client.id] }, prompt: "Elige Dueño" %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
